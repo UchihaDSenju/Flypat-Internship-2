@@ -1,0 +1,152 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    line-height: 1.75rem;
+}
+html{
+    font-size: 100%;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: pink; */
+    height: 70px;
+    padding: 5px 30px;
+}
+.container{
+    transition: 0.3s;
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 90vw;
+    padding-bottom: 2rem;
+    min-height: calc(100vh - (6rem + 4rem));
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2rem;
+    margin-top: 2px;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;/* This here is important for separating contact */
+}
+.nav-items{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: 0.3s;
+}
+.nav-items li{
+    display: inline-block;
+    font-size: 25px;
+    padding: 0 10px;
+}
+.nav-items .active a{
+    background-color: #645cff;
+    border-radius: 0.25rem;
+    padding: 0.15rem 1rem;
+    color: white;
+}
+.nav-items .active a:hover{
+    background-color: #173c70;
+    transition: 0.2s;
+    color: white;
+}
+.nav-items li a:hover{
+    color: #645cff;
+    transition: 0.3s;
+}
+.contact{
+    margin-right: 0;
+    margin-left: auto; /* These two property along with width in .navbar is important to separate contact */
+}
+.burger{
+    font-size: 27px;
+    cursor: pointer;
+    display: none;
+}
+.footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 4rem;
+    margin-top: 0;
+}
+.footer p{
+    color: white;
+    margin: 0;
+}
+.footer span{
+    color: #645cff;
+}
+@media(max-width: 950px){
+    .nav-items li{
+        font-size: 15px;
+    }
+}
+@media(max-width: 800px){
+    .navbar{
+        height: 0;/* 370 */
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 70px;
+        width: 100vw;
+        /* background-color: pink; */
+        overflow: hidden;
+        display: block;
+        transition: 0.3s;
+    }
+    .nav-items{
+        display: block;
+        transition: 0.3s;
+    }
+    .nav-items li{
+        display: block;
+        margin: 20px auto 0 auto;
+        text-align: center;
+        width: 90vw;
+        padding-top: 20px;
+        border-top: 0.5px solid black;
+        transition: 0.3s;
+        opacity: 0;
+    }
+    header{
+        justify-content: space-between;
+    }
+    .burger{
+        display: block;
+    }
+    .navbar.active{
+        height: 370px;
+        transition: 0.3s;
+    }
+    .navbar.active .nav-items li{
+        opacity: 1;
+        transition: 0.3s;
+    }
+    .container.active{
+        margin-top: 370px;
+        transition: 0.3s;
+    }
+
+}
